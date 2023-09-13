@@ -30,7 +30,7 @@ __Step 2: Install smartgit__
 
 
 
-#Steps to fork and modify a repo
+# Steps to fork and modify a repo
 
 1. Click on the ```fork``` button on the repo landing page on [github.com](https://github.com)
 2. Follow the instructions to complete creating your fork
