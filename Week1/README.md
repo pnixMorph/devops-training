@@ -3,7 +3,7 @@
 ## Mac
 
 __Step 1: Install homebrew__
-+ Run the command ```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"```
++ Run the command ```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"```<br>
 __Step 2: Install git__
 + Run the command ```brew install git```
 
