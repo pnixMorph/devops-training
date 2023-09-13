@@ -19,7 +19,7 @@ __Step 2: Install git__
 ## Windows
 
 __Step 1: Install Git Bash__
-+ Download Git Bash from [DownLoad GitBash](https://gitforwindows.org) [or click this link](https://github.com/git-for-windows/git/releases/tag/v2.42.0.windows.2) and choose a specific .exe version for your computer
++ Download Git Bash from [DownLoad GitBash](https://gitforwindows.org) or [click this link](https://github.com/git-for-windows/git/releases/tag/v2.42.0.windows.2) and choose a specific .exe version for your computer
 + After download, run the installer and follow the installation steps
 
 __Step 2: Install smartgit__
