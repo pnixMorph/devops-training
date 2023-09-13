@@ -32,10 +32,13 @@ __Step 2: Install smartgit__
 
 #Steps to fork and modify a repo
 
-1. Click on the '''fork''' button on the repo landing page on [github.com(https://github.com)
+1. Click on the ```fork``` button on the repo landing page on [github.com](https://github.com)
 2. Follow the instructions to complete creating your fork
 3. Use git bash or smartgit to ```clone``` your fork to a local directory(folder)
-4. Make changes in the working directory
-5. Now ```add``` and ```commit``` the changes
-6. Next ```push``` the changes back to your forked repo
-7. Create a PR from your changes
+  + ```git clone https://link-to-github-repo```
+5. Make changes in the working directory
+6. Now ```add``` and ```commit``` the changes
+  + ```git add [filename]``` and ```git commit -m "Comit message"``` 
+7. Next ```push``` the changes back to your forked repo
+  + ```git push remote main```
+8. Create a PR from your changes
