@@ -55,4 +55,10 @@ _grep_ - "Search Master": Search for specific text within files. It's like havin
 pipes (|) - "Connect the Dots": Use pipes to connect commands, passing output from one as input to another. It's like building intricate machines.
 command1 | command2
 
+_touch_ - "Create Magic": Use the touch command to create empty files. It's like summoning a blank parchment for your spells.
+```touch I_am_empty.txt```
+
+_find_ - "Treasure Hunt": This command helps you search for files and directories deep within your computer. Think of it as a treasure map for your data.
+```find /path/to/search -name "filename"```
+
 Remember, the key to becoming a shell pro is practice. The more you navigate and play with these commands, the more comfortable you'll become. Soon, you'll be navigating your computer like a true _shell magician!_
