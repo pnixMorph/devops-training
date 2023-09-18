@@ -1,4 +1,4 @@
-## Tasks to be implemented
+## Week 2 Task
 
 #### Task 1: Create a directory structure for a new website
 - Create a new directory in your home directory called `www`
