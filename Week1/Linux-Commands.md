@@ -196,7 +196,7 @@
 | Redirect Stdout & Stderr (`&>` or `2>&1`) | Redirect both `stdout` and `stderr` to a file | `$ command &> output_and_error.txt`        |
 | Pipes (`|`)               | Send `stdout` of one command as `stdin` to another | `$ cat input.txt | grep "another"`         |
 | Discard Output (`/dev/null`) | Redirect output to discard it             | `$ command > /dev/null`                            |
-
+| Multiple commands (`&&`)  | Run multiple commands one after the other    | `$ command1 && command2`                           |
 
 ## Navigating Like a Tourist
 
