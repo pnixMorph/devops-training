@@ -49,6 +49,7 @@ else:
 - Iterating through sequences are done with loops using `for` and `while` keywords
 - `for` uses iterators, `while` uses a continuation condition
 ```python
+age = int(input("Type in your age: "))
 # Conditional statements
 if age >= 18:
     print("You are an adult.")
