@@ -29,11 +29,12 @@ print("height", height)
 - Use `input()` to get user input.
 - Use `print()` to display output to user
 ```python
-# Input and output
+# Get input from the user.
 user_input = input("Enter something: ")
-print("You entered:", user_input)
+print("You entered: ", user_input)
 
-x = 10
+# Convert (cast) the str input into an int
+x = int(user_input)
 if x > 5:
     print("x is greater than 5")
 elif x == 5:
