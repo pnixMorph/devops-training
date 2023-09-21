@@ -211,13 +211,41 @@ rm moved.txt              # Remove a file
 
 ```bash
 #!/bin/bash
-
 # Accessing command-line arguments
 echo "Accessing command-line arguments:"
 echo "Script name: $0"
 echo "First argument: $1"
 echo "Second argument: $2"
+```
 
+```bash
+#!/bin/bash
+# Using shift
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -f|--file)
+          filename="$2"
+          shift
+          ;;
+        -o|--output)
+          outputfile="$2"
+          shift
+          ;;
+        -n|--lines)
+          lines="$2"
+          shift
+          ;;
+        *)
+          echo "Uknown option: $1"
+          exit 1
+          ;;
+    esac
+    shift
+done
+```
+
+```bash
+#!/bin/bash
 # Parsing options with getopts
 echo -e "\nParsing options with getopts:"
 while getopts ":a:b:" opt; do
