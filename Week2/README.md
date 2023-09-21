@@ -19,17 +19,22 @@
 name = "John"
 age = 25
 height = 1.75
+
+print("name", name)
+print("age", age)
+print("height", height)
 ```
 
 ### Basic Input and Output
 - Use `input()` to get user input.
 - Use `print()` to display output to user
 ```python
-# Input and output
+# Get input from the user.
 user_input = input("Enter something: ")
-print("You entered:", user_input)
+print("You entered: ", user_input)
 
-x = 10
+# Convert (cast) the str input into an int
+x = int(user_input)
 if x > 5:
     print("x is greater than 5")
 elif x == 5:
@@ -44,6 +49,7 @@ else:
 - Iterating through sequences are done with loops using `for` and `while` keywords
 - `for` uses iterators, `while` uses a continuation condition
 ```python
+age = int(input("Type in your age: "))
 # Conditional statements
 if age >= 18:
     print("You are an adult.")
