@@ -85,8 +85,10 @@ The easiest option for installing Java is to use the version packaged with Ubunt
 ```sudo apt update```
 
 # Install Jenkins
+```bash
 sudo apt install jenkins
-```sudo systemctl start jenkins && sudo systemctl enable jenkins```
+sudo systemctl start jenkins && sudo systemctl enable jenkins
+```
 
 ## Now go to a web browser and visit the web interface
 ```http://localhost:8080```
