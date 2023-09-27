@@ -115,4 +115,3 @@ You can either create a Jenkins job via the web UI or you can create a Jenkins p
 - Jenkins Pipeline is defined using a domain-specific language called "Pipeline DSL" or by using the Blue Ocean visual editor.
 - You can create a Jenkinsfile in your project's repository to define the pipeline stages, or you can use the Pipeline DSL directly in Jenkins.
 
-## Follow the instruction on the screen to Log in 
