@@ -1,11 +1,11 @@
-# Installing Java (JRE/JDK) on Ubuntu 20.04
+## Installing Java (JRE/JDK) on Ubuntu 20.04
 
-## Prerequisites
+### Prerequisites
 To follow this tutorial, you will need:
 
 - One Ubuntu 20.04 server set up by following the [Ubuntu 20.04 initial server setup guide](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04) tutorial, including a sudo non-root user and a firewall.
 
-## Installing the Default JRE/JDK
+### Installing the Default JRE/JDK
 The easiest option for installing Java is to use the version packaged with Ubuntu. By default, Ubuntu 20.04 includes Open JDK 11, which is an open-source variant of the JRE and JDK.
 
 1. Update the package index:
@@ -73,24 +73,46 @@ The easiest option for installing Java is to use the version packaged with Ubunt
 
 
 
-# Install Jenkins
+## Install Jenkins
 
-# Add the Jenkins repository key to your system
-```wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -```
+### Add the Jenkins repository key to your system
+```bash
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+```
 
-# Add the Jenkins repository to your system
-```echo "deb https://pkg.jenkins.io/debian-stable binary/" | sudo tee /etc/apt/sources.list.d/jenkins.list```
+### Add the Jenkins repository to your system
+```bash
+echo "deb https://pkg.jenkins.io/debian-stable binary/" | sudo tee /etc/apt/sources.list.d/jenkins.list
+```
 
-# Update package repository again
-```sudo apt update```
+### Update package repository again
+```bash
+sudo apt update
+```
 
-# Install Jenkins
+### Install Jenkins
 ```bash
 sudo apt install jenkins
 sudo systemctl start jenkins && sudo systemctl enable jenkins
 ```
 
-## Now go to a web browser and visit the web interface
-```http://localhost:8080```
+## Setup Jenkins
+
+### Now go to a web browser and visit the web interface
+```http://<your-server-ipaddress>:8080```
+
+### Unlock Jenkins
+When you first access Jenkins, you'll be prompted to unlock it. The initial administrator password can be found in the Jenkins server's log file or in a predefined location specified on the web UI.
+
+### Install Plugins
+Jenkins is highly extensible through plugins. Install plugins that are necessary for your project. Common plugins include Git, GitHub, Pipeline, and Docker. You can select the standard/recommended plugins
+
+### Configure Global Settings
+Configure global settings in Jenkins, such as email notifications, security settings, and system configurations according to your project's requirements.
+
+### Create a Jenkins Pipeline
+You can either create a Jenkins job via the web UI or you can create a Jenkins pipeline by adding a Jenkinsfile in your project repository.
+- Jenkins Pipeline is defined using a domain-specific language called "Pipeline DSL" or by using the Blue Ocean visual editor.
+- You can create a Jenkinsfile in your project's repository to define the pipeline stages, or you can use the Pipeline DSL directly in Jenkins.
 
 ## Follow the instruction on the screen to Log in 
