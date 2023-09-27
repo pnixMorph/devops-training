@@ -2,8 +2,7 @@
 
 ### Ansible Playbook and syntax
 Here is a detailed sample of an Ansible playbook along with explanations for each section
-```ansible
----
+```yaml
 - name: Configure Web Servers
   hosts: web_servers
   become: yes
