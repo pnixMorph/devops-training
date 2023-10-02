@@ -36,7 +36,7 @@ Below is an Ansible playbook that configures Nginx and sets the document root to
         state: present
       loop:
         - nginx
-        - openjdk-11-jdk
+        - default-jdk
         - jenkins
 
     - name: Start Jenkins Service
@@ -92,5 +92,3 @@ Run this playbook using the `ansible-playbook` command, specifying your inventor
 ```bash
 ansible-playbook install.yml
 ```
-
-Replace `your_inventory_file` with the path to your Ansible inventory file or the IP/hostname of your target server if you're specifying it directly.
