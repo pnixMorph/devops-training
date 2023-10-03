@@ -65,6 +65,24 @@ Here is a detailed sample of an Ansible playbook along with explanations for eac
 
 This playbook, when run against a group of web servers, will update package caches, install Apache, start the Apache service, create a directory for the website, and copy website files. If changes are made to the website files, it will also reload Apache to apply the changes.
 
+### Inventory File
+Ansible automates tasks on managed nodes or “hosts” in your infrastructure, using a list or group of lists known as inventory. You can pass host names at the command line, but most Ansible users create inventory files. Your inventory defines the managed nodes you automate, with groups so you can run automation tasks on multiple hosts at the same time. Once your inventory is defined, you use patterns to select the hosts or groups you want Ansible to run against. An example inventory file is shown below:
+```yaml
+web_servers:
+  hosts:
+    10.0.0.1:
+    bar.example.com:
+```
+
+The name `web_servers` defines a group of hosts in the inventory file. This same name is used to reference same set of hosts in the `hosts` entry in the ansible playbook.
+
+To run a playbook with a specified inventory file:
+```bash
+ansible-playbook -i inventory_file.yml playbook_file.yml
+```
+
+Note that the hosts specified in an Ansible inventory file do not override the hosts specified in the playbook. The inventory file and playbook work together to determine which hosts Ansible will target during the execution of a playbook. In the above example, the playbook is targeting hosts in the `web_servers` group.
+
 
 ### Installing Ansible
 
