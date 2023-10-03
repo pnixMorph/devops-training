@@ -37,6 +37,7 @@ Below is an Ansible playbook that configures Nginx and sets the document root to
       loop:
         - nginx
         - default-jdk
+        - default-jre
         - jenkins
 
     - name: Start Jenkins Service
@@ -51,6 +52,10 @@ Below is an Ansible playbook that configures Nginx and sets the document root to
         dest: /etc/nginx/sites-available/default
       notify:
         - Reload Nginx
+
+    - name: Change ownership of web folder
+      shell: |
+        chown -R jenkins:jenkins /var/www/html
 
   handlers:
     - name: Reload Nginx
