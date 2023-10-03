@@ -24,6 +24,7 @@ ssh-keygen
 When prompted, specify the location for saving the keys (press Enter to save in the default location, usually your user directory). You can also set a passphrase for additional security
 
 5. **Copy the Public Key**
-```type C:\path\to\your\ssh\folder\id_rsa.pub
+```
+type C:\path\to\your\ssh\folder\id_rsa.pub
 ```
 Replace C:\path\to\your\ssh\folder\id_rsa.pub with the actual path to your public key file. Copy the entire key starting with ssh-rsa.
