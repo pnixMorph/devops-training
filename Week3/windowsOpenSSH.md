@@ -27,3 +27,32 @@ When prompted, specify the location for saving the keys (press Enter to save in 
 ```type C:\path\to\your\ssh\folder\id_rsa.pub
 ```
 Replace C:\path\to\your\ssh\folder\id_rsa.pub with the actual path to your public key file. Copy the entire key starting with ssh-rsa.
+
+6. **Connect to the server using another terminal**
+**Connect to Your Server:**
+Log in to your server using your preferred method, such as SSH or a web-based control panel provided by your hosting provider.
+
+**Edit the authorized_keys File:**
+Once logged in to your server, navigate to your home directory and create a .ssh directory if it doesn't already exist:
+```
+mkdir -p ~/.ssh
+```
+
+6. **Edit the authorized_keys file**
+```
+nano ~/.ssh/authorized_keys
+```
+
+7. **Paste the Public Key:**
+Inside the editor, paste your public key that you copied earlier into the authorized_keys file.
+
+8. **Save and exit**
+Save the file and exit
+
+9. **Set Correct Permissions (important for Security)**
+Ensure that the ~/.ssh directory and the authorized_keys file have the correct permissions. Run the following commands:
+
+```
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+```
