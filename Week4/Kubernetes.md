@@ -223,4 +223,14 @@ kubectl expose deployment my-web-app --type=LoadBalancer --port=80 --target-port
 
 This command exposes the replicas of the sample Python app to the world behind a load balancer, which receives traffic at port 80 and routes that traffic to port 80 on the Pods.
 
-You can check your DigitalOcean dashboard to confirm that the loadbalancer has been deployed.
+You can check your DigitalOcean dashboard to confirm that the loadbalancer has been deployed. Alternatively, use kubectl get services to see its status:
+
+```bash
+kubectl get services
+```
+```
+NAME                   TYPE           CLUSTER-IP      EXTERNAL-IP          PORT(S)     AGE
+kubernetes             ClusterIP      192.0.2.1       <none>               443/TCP     2h
+sample-load-balancer   LoadBalancer   192.0.2.167     <pending>       80:32490/TCP     6s
+```
+When the load balancer creation is complete, `<pending>` will show the external IP address instead. In the `PORT(S)` column, the first port is the incoming port (80), and the second port is the `node port` (32490), not the container port supplied in the `targetPort` parameter.
