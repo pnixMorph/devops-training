@@ -174,7 +174,7 @@ This returns an output similar to the following:
 
 ```
 NAME                       DESIRED   CURRENT   READY   AGE
-my-web-app-84b997f5b4   1         1         1       5s
+my-web-app-84b997f5b4      1         1         1       5s
 ```
 
 And see that your Replica Set is just running one Pod, which is one replica, one instance of your application:
@@ -186,7 +186,7 @@ kubectl get pods
 This returns an output similar to the following:
 ```
 NAME                             READY   STATUS             RESTARTS   AGE
-my-web-app-84b997f5b4-6j5pn   1/1     Running              0          27s
+my-web-app-84b997f5b4-6j5pn      1/1     Running            0          27s
 ```
 
 Try scaling up to run 20 replicas:
