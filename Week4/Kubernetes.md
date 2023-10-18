@@ -1,6 +1,6 @@
 ## Deploy a scalable application with Kubernetes
 
-In this tutorial we will be deploying a simple ReactJs frontend, Python backend app using `kubernetes`. We will be using a managed Kubernetes service provided by DigitalOcean (called DigitalOcean Kubernetes or DOKS), which allows us to deploy Kubernetes clusters without the complexities of handling the control plan and containerized infrastructure.
+In this tutorial we will be deploying a simple ReactJs frontend, Python backend app using `kubernetes`. We will be using a managed Kubernetes service provided by DigitalOcean (called DigitalOcean Kubernetes or DOKS), which allows us to deploy Kubernetes clusters without the complexities of handling the control plane and containerized infrastructure.
 
 ### Prerequisites
 To follow this tutorial, you need to:
@@ -99,7 +99,7 @@ You will be prompted for a username and password. Paste the token as the usernam
  Password: <paste-api-token>
  ```
 
-Now you have a registry, run the following command to tag your local image with its fully-qualified destination path and use your registry name:you can now push your image to the registry.
+Now you have a registry, run the following command to tag your local image with its fully-qualified destination path and use your registry name.
 
 ```bash
 docker tag my-web-app registry.digitalocean.com/<your-registry-name>/my-web-app
