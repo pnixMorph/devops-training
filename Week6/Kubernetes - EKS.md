@@ -83,12 +83,10 @@ This builds the image in your machine's local image registry. You can view the l
 
 #### Step 3: Upload your Docker Image
 
-The image is still only in your local regsitry. To run it in production, you need to upload the image to a remote registry. Docker has a registry at [Docker Hubs](https://hubs.docker.com), however we will be using AWS's Elastic Container Registry. To create a registry, go to the [Services > Containers > Elastic Container Registry](https://console.aws.amazon.com/ecr) and follow the steps to create a new registry.
-
-After creating the registry, you need to create an IAM Access Key to allow to allow you log in with docker. Do this from the `username > Security credentials > Access keys` section. Make sure you save the access key name and value somewhere for future reference.
-
-The AWS CLI is required to have access to the registry, and any other AWS APIs.
+The image is still only in your local regsitry. To run it in production, you need to upload the image to a remote registry. Docker has a registry at [Docker Hubs](https://hubs.docker.com), however we will be using AWS's Elastic Container Registry (ECR). The AWS CLI is required to have access to ECR, or any other AWS APIs.
 [Click here to install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html), if you haven't already done so.
+
+You need to create an IAM Access Key to allow you login to ECR with docker. Do this from the `username > Security credentials > Access keys` section. Make sure you save the access key name and value somewhere for future reference.
 
 To configure AWS CLI with your access key, run the command:
 ```bash
@@ -103,14 +101,34 @@ Default region name [None]: your-AWS-region-name
 Default output format [None]: 
 ```
 
-Once AWS CLI is installed and configured, run the following command to log into the registry (replace `<account_id>` with your AWS account id and `<region>` with your AWS region):
+Once AWS CLI is installed and configured, run the following command to get docker to login to your AWS private ECR registry. Replace `<account_id>` with your AWS account id and `<region>` with your AWS region:
 
 ```bash
-aws ecr get-login-password --region us-east-1 \
+aws ecr get-login-password --region <region> \
 | docker login \
     --username AWS \
     --password-stdin <account_id>.dkr.ecr.<region>.amazonaws.com
 ```
+
+> **Note:** If you are creating a public repository, a slightly different command is used to login to docker:
+> ```bash
+> aws ecr-public get-login-password --region <region> \
+> | docker login \
+>     --username AWS \
+>     --password-stdin public.ecr.aws
+> ```
+> We are now using `aws ecr-public` instead of `aws ecr`, while logging into the public registry subdomain.
+
+To create a repository, go to the [Services > Containers > Elastic Container Registry](https://console.aws.amazon.com/ecr) and follow the steps to create a new repository. Remember you can create either a `Public` or `Private` repository.
+
+Alternatively, you can also create a private repository with AWS CLI by running the following command:
+```bash
+aws ecr create-repository \
+    --repository-name <repository-name> \
+    --image-scanning-configuration scanOnPush=true \
+    --region <region>
+```
+> **Note:** use `aws ecr-public` to create a public repository
 
 Now you have a registry and logged into it, run the following command to tag your local image with its fully-qualified destination path and use your registry name.
 
@@ -129,6 +147,8 @@ You can pull this image and run a container from it in another machine with the 
 ```bash
 docker run -p 80:80 <your-ecr-full-registry-name>/my-web-app
 ```
+
+[Check here](https://docs.aws.amazon.com/AmazonECR/latest/userguide/getting-started-cli.html) for other things you can do with docker on ECR.
 
 #### Step 4: Create a Cluster
 
