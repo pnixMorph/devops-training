@@ -159,7 +159,7 @@ Run the following command in Azure Cloud Shell, replacing `<subscription-id>` wi
 
 ```bash
 az account set --subscription <subscription-id>
-az aks get-credentials --resource-group <my-cluster-group> -name <my-cluster>
+az aks get-credentials --resource-group <my-cluster-group> --name <my-cluster>
 ```
 
 #### Step 5: Run your App on the Cluster
