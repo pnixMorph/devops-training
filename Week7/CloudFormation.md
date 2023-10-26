@@ -91,4 +91,4 @@ References: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quick
 AWS has provided lots of templates for basic server configurations that can be used as the starting point for deployments. [Here's a tutorial on creating a Wordpress website using existing template.](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/GettingStarted.Walkthrough.html)
 
 ### Create a CloudFormation stack using Designer
-AWS provides the CloudFormation Designer](), a GUI-based canvas for building stack templates via drag-and-drop. [Here is an example how to build a Basic web server](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/working-with-templates-cfn-designer-walkthrough-createbasicwebserver.html) using CloudFormation Designer.
+AWS provides the [CloudFormation Designer](https://console.aws.amazon.com/cloudformation/designer), a GUI-based canvas for building stack templates via drag-and-drop. [Here is an example how to build a Basic web server](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/working-with-templates-cfn-designer-walkthrough-createbasicwebserver.html) using CloudFormation Designer.
