@@ -88,8 +88,8 @@ jobs:
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@v2
         with:
-          sonar-host-url: 'https://your-sonarqube-instance.com'  # Replace with your SonarQube server URL
-          sonar-login: ${{ secrets.SONARQUBE_TOKEN }}  # Add a secret named SONARQUBE_TOKEN to your repository
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
 
       - name: Upload SonarQube results
         uses: actions/upload-artifact@v2
@@ -100,7 +100,7 @@ jobs:
 
 Save this YAML file in your working directory (e.g., `.github/workflows/sonarqube.yml`), replacing `'https://your-sonarqube-instance.com'` with the URL of your SonarQube instance.
 
-Make sure to add a secret named SONARQUBE_TOKEN to your GitHub repository. You can do this by going to your repository on GitHub, navigating to "Settings" > "Secrets," and adding a new secret with the name SONARQUBE_TOKEN and the value being the access token generated from your SonarQube server.
+Make sure to add a secret named SONAR_TOKEN containing the SonarQube token generated from your SonarQube server to your GitHub repository. Also, add a secret named SONAR_HOST_URL containing the SonarQube host url you installed earlier. You can add secrets by going to your repository on GitHub, navigating to "Settings" > "Secrets," and adding a new secret with the required name and the value.
 
 This example workflow triggers on each push to the `main` branch, checks out the code, sets up the JDK, runs SonarQube static analysis, and uploads the results as an artifact.
 
